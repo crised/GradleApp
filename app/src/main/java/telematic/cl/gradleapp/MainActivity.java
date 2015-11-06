@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public void buttonListener(View view) {
 
 
-        Pair<Context, String> pair = new Pair<>(getApplicationContext(), "jokepair");
+        Pair<Context, String> pair = new Pair<>(this.getApplicationContext(), "jokepair");
 
         new EndPointAsyncTask().execute(pair);
 
