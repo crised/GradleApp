@@ -12,6 +12,8 @@ import com.google.api.server.spi.config.ApiNamespace;
 
 import javax.inject.Named;
 
+import cl.telematic.Jokes;
+
 /**
  * An endpoint class we are exposing
  */
@@ -33,6 +35,14 @@ public class MyEndpoint {
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
+
+        return response;
+    }
+
+    @ApiMethod(name = "tellJoke")
+    public MyBean tellJoke(@Named("name") String name) {
+        MyBean response = new MyBean();
+        response.setData(name + ", this is your Joke: " + Jokes.getJoke());
 
         return response;
     }
