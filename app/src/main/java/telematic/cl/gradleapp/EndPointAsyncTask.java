@@ -13,6 +13,7 @@ import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 
 import java.io.IOException;
+import java.util.concurrent.CountDownLatch;
 
 import cl.telematic.Jokes;
 import cl.telematic.backend.myApi.MyApi;
@@ -22,6 +23,8 @@ import telematic.cl.activitylibrary.JokeActivity;
  * Created by crised on 06-11-15.
  */
 public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
+
+
 
     private static MyApi myApiService = null;
     private Context mContext;
@@ -66,6 +69,7 @@ public class EndPointAsyncTask extends AsyncTask<Pair<Context, String>, Void, St
         intent.putExtra(JokeActivity.JOKE_KEY, Jokes.getJoke());
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(intent);
+
 
 
     }

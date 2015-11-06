@@ -1,12 +1,12 @@
 package telematic.cl.gradleapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,19 +15,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonListener(View view) {
-
-
         Pair<Context, String> pair = new Pair<>(this.getApplicationContext(), "jokepair");
-
         new EndPointAsyncTask().execute(pair);
-
-     /*   Intent intent = new Intent(this, JokeActivity.class);
-        Log.d("MainActivity", "buttonListener");
-
-        intent.putExtra(JokeActivity.JOKE_KEY, Jokes.getJoke());
-
-        startActivity(intent);*/
-
-
+        finish();
     }
 }
