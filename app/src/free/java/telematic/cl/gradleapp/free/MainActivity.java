@@ -3,7 +3,7 @@ package telematic.cl.gradleapp.free;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.util.Pair;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -13,7 +13,7 @@ import com.google.android.gms.ads.AdView;
 import telematic.cl.gradleapp.EndPointAsyncTask;
 import telematic.cl.gradleapp.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
