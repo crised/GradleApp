@@ -1,13 +1,10 @@
 package telematic.cl.gradleapp;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.util.Pair;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import cl.telematic.Jokes;
-import telematic.cl.activitylibrary.JokeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,12 +16,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonListener(View view) {
 
-        Intent intent = new Intent(this, JokeActivity.class);
+
+        Pair<Context, String> pair = new Pair<>(getApplicationContext(), "jokepair");
+
+        new EndPointAsyncTask().execute(pair);
+
+     /*   Intent intent = new Intent(this, JokeActivity.class);
         Log.d("MainActivity", "buttonListener");
 
         intent.putExtra(JokeActivity.JOKE_KEY, Jokes.getJoke());
 
-        startActivity(intent);
+        startActivity(intent);*/
 
 
     }
